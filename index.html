@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PointerEvent</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+    <style>
+        body{
+            background-color: #f2f2f2;
+        }
+        a,
+        button {
+            pointer-events: none;
+        }
+
+        @media screen and (max-width:1024px) {
+
+            a,
+            button {
+                pointer-events: all;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div class="container text-center">
+        <h1 tabindex="0">Welcome to HelloWorld</h1>
+        <p tabindex="0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi dolores fugiat odio iste
+            consequuntur nam illo reprehenderit earum error aperiam deserunt cumque impedit molestiae natus porro at,
+            debitis et possimus.</p>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="card mb-4">
+                    <img tabindex="0" class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title" tabindex="0">John Doe</h4>
+                        <p class="card-text" tabindex="0">Some example text.</p>
+                        <a href="#" tabindex="0" class="btn btn-primary" data-toggle="modal" data-target="#myModal">See
+                            Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card mb-4">
+                    <img tabindex="0" class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title" tabindex="0">John Doe</h4>
+                        <p class="card-text" tabindex="0">Some example text.</p>
+                        <a href="#" tabindex="0" class="btn btn-primary" data-toggle="modal" data-target="#myModal">See
+                            Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card mb-4">
+                    <img tabindex="0" class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title" tabindex="0">John Doe</h4>
+                        <p class="card-text" tabindex="0">Some example text.</p>
+                        <a href="#" tabindex="0" class="btn btn-primary" data-toggle="modal" data-target="#myModal">See
+                            Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="card mb-4">
+                    <img tabindex="0" class="card-img-top" src="https://www.w3schools.com/bootstrap4/img_avatar1.png"
+                        alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title" tabindex="0">John Doe</h4>
+                        <p class="card-text" tabindex="0">Some example text.</p>
+                        <a href="#" tabindex="0" class="btn btn-primary" data-toggle="modal" data-target="#myModal">See
+                            Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title" tabindex="0">Modal Heading</h4>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <p tabindex="0">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit asperiores, iste reiciendis sequi omnis optio maiores fugiat reprehenderit consequatur distinctio nesciunt ea accusantium pariatur dolorem quod modi aspernatur enim repellat?
+                        </p>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button tabindex="0" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var lastclick = null;
+        $(document).ready(function () {
+            $('a').click(function(e){
+                lastclick = e.target;
+            })
+            $("#myModal").on('shown.bs.modal', function () {
+                $('.modal-title').focus();
+            });
+            $("#myModal").on('hide.bs.modal', function () {
+                lastclick &&  $(lastclick).focus();                
+            });
+        });
+    </script>
+</body>
+
+</html>
